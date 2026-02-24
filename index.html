@@ -40,19 +40,21 @@
 
         <!-- Filter Buttons -->
         <div class="flex gap-2">
-          <button class="px-4 py-1 rounded-md bg-blue-600 text-white text-sm" id="all_filter_btn">
+          <button class="px-4 py-1 rounded-md bg-blue-600 text-white text-sm" id="all_filter_btn" onclick="toggleStyle('all_filter_btn')">
             All
           </button>
-          <button class="px-4 py-1 rounded-md bg-gray-200 text-gray-700 text-sm hover:bg-gray-300" id="interview_filter_btn">
+          <button class="px-4 py-1 rounded-md bg-gray-200 text-gray-700 text-sm hover:bg-gray-300" id="interview_filter_btn" onclick="toggleStyle('interview_filter_btn')">
             Interview
           </button>
-          <button class="px-4 py-1 rounded-md bg-gray-200 text-gray-700 text-sm hover:bg-gray-300" id="rejected_filter_btn">
+          <button class="px-4 py-1 rounded-md bg-gray-200 text-gray-700 text-sm hover:bg-gray-300" id="rejected_filter_btn" onclick="toggleStyle('rejected_filter_btn')">
             Rejected
           </button>
         </div>
- <div class="mt-10 space-y-6" id="all_job_cards">
 
-      <!-- Job Card -->
+
+        <!-- All job card -->
+      <div class="mt-10 space-y-6" id="all_job_cards">
+
       <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 relative card">
 
         <!-- Delete Button (Top Right Only) -->
