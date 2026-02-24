@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <div class="max-w-5xl mx-auto px-4 py-10">
+
+    <!-- Header Section -->
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+        Job Application Tracker
+      </h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div class="bg-gray-50 p-4 rounded-xl text-center">
+          <p class="text-gray-500 text-sm">Total</p>
+          <p class="text-2xl font-bold text-blue-600" id="total_count">8</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-xl text-center">
+          <p class="text-gray-500 text-sm">Interview</p>
+          <p class="text-2xl font-bold text-green-600" id="interview_count">0</p>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-xl text-center">
+          <p class="text-gray-500 text-sm">Rejected</p>
+          <p class="text-2xl font-bold text-red-600" id="rejected_count">0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jobs Section -->
+     <main class="mt-10 space-y-6">
+      <h2 class="text-xl font-semibold text-gray-700">Available Jobs</h2>
+
+        <!-- Filter Buttons -->
+        <div class="flex gap-2">
+          <button class="px-4 py-1 rounded-md bg-blue-600 text-white text-sm" id="all_filter_btn">
+            All
+          </button>
+          <button class="px-4 py-1 rounded-md bg-gray-200 text-gray-700 text-sm hover:bg-gray-300" id="interview_filter_btn">
+            Interview
+          </button>
+          <button class="px-4 py-1 rounded-md bg-gray-200 text-gray-700 text-sm hover:bg-gray-300" id="rejected_filter_btn">
+            Rejected
+          </button>
+        </div>
+ <div class="mt-10 space-y-6" id="all_job_cards">
+
+      <!-- Job Card -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 relative card">
+
+        <!-- Delete Button (Top Right Only) -->
+        <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
+          🗑
+        </button>
+
+        <!-- Job Info -->
+        <h3 class="text-lg font-semibold text-gray-800">
+          Mobile First Corp
+        </h3>
+        <p class="text-gray-500">React Native Developer</p>
+        <p class="text-sm text-gray-400 mt-1">
+          Remote • Full-time • $130,000 - $175,000
+        </p>
+
+        <span class="inline-block mt-3 px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-700">
+          NOT APPLIED
+        </span>
+
+        <p class="text-gray-600 text-sm mt-4">
+          Build cross-platform mobile applications using React Native.
+          Work on products used by millions of users worldwide.
+        </p>
+
+        <!-- Action Buttons (Bottom of Card) -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+          <button class="flex-1 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition text-sm interview_btn">
+            Interview
+          </button>
+
+          <button class="flex-1 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition text-sm rejected_btn">
+            Rejected
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Another Card Example -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 relative card">
+
+        <button class="absolute top-4 right-4 text-red-500 px-3 py-1 border-2 rounded border-red-500 font-semibold">
+          Delete
+        </button>
+
+        <h3 class="text-lg font-semibold text-gray-800">
+          WebFlow Agency
+        </h3>
+        <p class="text-gray-500">Web Designer / Developer</p>
+        <p class="text-sm text-gray-400 mt-1">
+          Los Angeles, CA • Part-time • $90,000 - $120,000
+        </p>
+
+        <span class="inline-block mt-3 px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-700">
+          NOT APPLIED
+        </span>
+
+        <p class="text-gray-600 text-sm mt-4">
+          Create stunning web experiences for high-profile clients.
+          Must have portfolio and modern web design skills.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+          <button class="flex-1 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition text-sm interview_btn">
+            Interview
+          </button>
+
+          <button class="flex-1 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition text-sm rejected_btn">
+            Rejected
+          </button>
+        </div>
+
+      </div>
+
+      <!-- 3rd card -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 relative card">
+
+        <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
+          🗑
+        </button>
+
+        <h3 class="text-lg font-semibold text-gray-800">
+          WebFlow Agency
+        </h3>
+        <p class="text-gray-500">Web Designer / Developer</p>
+        <p class="text-sm text-gray-400 mt-1">
+          Los Angeles, CA • Part-time • $90,000 - $120,000
+        </p>
+
+        <span class="inline-block mt-3 px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-700">
+          NOT APPLIED
+        </span>
+
+        <p class="text-gray-600 text-sm mt-4">
+          Create stunning web experiences for high-profile clients.
+          Must have portfolio and modern web design skills.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+          <button class="flex-1 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition text-sm interview_btn">
+            Interview
+          </button>
+
+          <button class="flex-1 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition text-sm rejected_btn">
+            Rejected
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+     </main>
+   
+
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
