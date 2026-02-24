@@ -87,7 +87,7 @@ description
     if (currentStatus === "interview_filter_btn") {
       renderInterviewList();
     }
-    // if user is viewing rejected filter, rerender rejected list
+
     if (currentStatus === "rejected_filter_btn") {
       renderRejectedList();
     }
@@ -99,7 +99,7 @@ calculateCount()
 
     else if(e.target.classList.contains("rejected_btn")){
              let job = e.target.parentNode.parentNode;
-             console.log(job)
+            
     
     let name = job.querySelector(".name").innerText
     let position = job.querySelector(".position").innerText
@@ -137,9 +137,43 @@ if (currentStatus === "rejected_filter_btn") {
 
     }
 
+   else if(e.target.classList.contains("delete_btn")){
+
+  
+   let jobCard = e.target.parentNode
+  let name = jobCard.querySelector(".name").innerText.trim();
+
+  
+  interviewList = interviewList.filter(item => item.name.trim() != name);
+  rejectedList = rejectedList.filter(item => item.name.trim() != name);
+
+  for(let card of allJobCards.children){
+    let cardName = card.querySelector(".name").innerText.trim();
+    if(cardName == name){
+      card.remove();
+      break;
+    }
+  }
+
+  if(currentStatus == "interview_filter_btn" || currentStatus == "rejected_filter_btn"){
+      jobCard.parentNode.remove();
+  }
+
+  calculateCount();
+
+  if(currentStatus == "interview_filter_btn"){
+      renderInterviewList();
+  }
+  else if(currentStatus == "rejected_filter_btn"){
+      renderRejectedList();
+  }
+}
+
 
 })
 
+
+// function for render interview job list
 function renderInterviewList(){
     filterdJob.innerHTML ="";
 
@@ -167,7 +201,7 @@ function renderInterviewList(){
          <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 relative card">
 
        
-        <button class="absolute top-4 right-4 text-red-500 px-3 py-1 border-2 rounded border-red-500 font-semibold">
+        <button class="absolute top-4 right-4 text-red-500 px-3 py-1 border-2 rounded border-red-500 font-semibold delete_btn">
           Delete
         </button>
 
@@ -208,7 +242,7 @@ function renderInterviewList(){
     }
 }
 
-
+// function for rejected job
 function renderRejectedList(){
     filterdJob.innerHTML ="";
 
@@ -236,7 +270,7 @@ function renderRejectedList(){
          <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 relative card">
 
        
-        <button class="absolute top-4 right-4 text-red-500 px-3 py-1 border-2 rounded border-red-500 font-semibold">
+        <button class="absolute top-4 right-4 text-red-500 px-3 py-1 border-2 rounded border-red-500 font-semibold delete_btn">
           Delete
         </button>
 
